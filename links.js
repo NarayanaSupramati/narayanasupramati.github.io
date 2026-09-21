@@ -1,0 +1,14 @@
+// Task10: set actual HTTPS URLs here. Empty means pending, never a broken link.
+const MMIS_LINKS = Object.freeze({
+  APK_URL: 'https://github.com/NarayanaSupramati/mmis/releases/download/v0.3.3-demo/mmis-0.3.3-demo.apk',
+  DEMO_URL: '',
+  DECK_URL: ''
+});
+for (const [name, selector] of [['APK_URL','apk'], ['DEMO_URL','demo'], ['DECK_URL','deck']]) {
+  const url = MMIS_LINKS[name];
+  if (!url || !url.startsWith('https://')) continue;
+  const link = document.querySelector(`[data-${selector}]`);
+  link.href = url; link.hidden = false;
+  if (selector === 'apk') document.querySelector('[data-apk-pending]').hidden = true;
+  if (selector === 'demo') document.querySelectorAll('[data-demo-status]').forEach(el => { el.textContent = 'Available below'; });
+}
