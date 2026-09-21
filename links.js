@@ -2,7 +2,7 @@
 const MMIS_LINKS = Object.freeze({
   APK_URL: 'https://github.com/NarayanaSupramati/mmis/releases/download/v0.3.3-demo/mmis-0.3.3-demo.apk',
   DEMO_URL: '',
-  DECK_URL: ''
+  DECK_URL: 'https://narayanasupramati.github.io/mmis-hackathon-deck.pdf'
 });
 for (const [name, selector] of [['APK_URL','apk'], ['DEMO_URL','demo'], ['DECK_URL','deck']]) {
   const url = MMIS_LINKS[name];
